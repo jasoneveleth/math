@@ -56,31 +56,12 @@ $$y^TX(X^TX)^{-1} = \alpha^T = \begin{bmatrix}m & b\end{bmatrix}$$
 
 Say we are given this set of coordinates: 
 $\{(1.3, 0.8), (3.2, 3.5), (5.6, 6.4), (8.5, 7.7)\}$. Then we need to open 
-`julia` and give give it the vectors:
+`julia` and give give it the vectors (some output omitted):
 ```julia
 julia> y = [0.8; 3.5; 6.4; 7.7]
-4-element Vector{Float64}:
- 0.8
- 3.5
- 6.4
- 7.7
-
 julia> X = [1.3 1; 3.2 1; 5.6 1; 8.5 1]
-4×2 Matrix{Float64}:
- 1.3  1.0
- 3.2  1.0
- 5.6  1.0
- 8.5  1.0
-
 julia> yt = transpose(y)
-1×4 transpose(::Vector{Float64}) with eltype Float64:
- 0.8  3.5  6.4  7.7
-
 julia> Xt = transpose(X)
-2×4 transpose(::Matrix{Float64}) with eltype Float64:
- 1.3  3.2  5.6  8.5
- 1.0  1.0  1.0  1.0
-
 julia> yt * X * inv(Xt * X)
 1×2 transpose(::Vector{Float64}) with eltype Float64:
  0.962823  0.122874
