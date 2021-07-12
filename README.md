@@ -7,6 +7,7 @@ help you find theorems or how to solve problems.
 
 - [ ] write a pagerank algorithm to rank the articles by importance, and output
   into the `dict.js` file
-- [ ] write the code for the search engine
+- [x] write the code for the search engine
 - [ ] write in all the theorems
+- [ ] test that the search engine is actually quitting if another query begins
 
