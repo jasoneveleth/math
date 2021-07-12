@@ -1,7 +1,7 @@
 function scan(e) {
     const worker = new Worker("worker.js");
     query = e.target.value
-    worker.onmessage = e => {
+    worker.onmessage = (e) => {
         hidden_arr = e.data
         for (let i = 0; i < e.data.length; i++) {
             nodes[i].style.display = hidden_arr[i]
