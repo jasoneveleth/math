@@ -1,4 +1,4 @@
-self.importScripts('dict.js');
+importScripts('dict.js');
 
 onmessage = (e) => {
     const query = e.data[0];
