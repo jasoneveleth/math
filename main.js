@@ -1,6 +1,9 @@
 function scan(e) {
-    const worker = new Worker("worker.js");
     query = e.target.value
+
+    worker.terminate()
+    worker = new Worker("worker.js");
+
     worker.onmessage = (e) => {
         hidden_arr = e.data
         for (let i = 0; i < e.data.length; i++) {
@@ -29,4 +32,4 @@ function $(str) {
 // ===============+ MAIN +=====================
 nodes = create_results($("results"))
 $("search").addEventListener('input', scan)
-
+let worker = new Worker("worker.js");
