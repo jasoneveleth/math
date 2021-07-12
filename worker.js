@@ -1,9 +1,8 @@
-importScripts('dict.js');
-
 onmessage = (e) => {
-    const query = e.data[0];
-    const start = e.data[1];
-    const stop = e.data[2];
+    const query = e.data[0]
+    const start = e.data[1]
+    const stop = e.data[2]
+    const articles = e.data[3]
 
     arr = []
     for (let i = start; i < stop; i++) {

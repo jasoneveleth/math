@@ -7,7 +7,7 @@ function scan(e) {
             nodes[i].style.display = hidden_arr[i]
         }
     }
-    worker.postMessage([query, 0, articles.length])
+    worker.postMessage([query, 0, articles.length, articles])
 }
 
 function create_results(element) {
