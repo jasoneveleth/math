@@ -1,3 +1,5 @@
+self.importScripts('dict.js');
+
 onmessage = (e) => {
     const query = e.data[0];
     const start = e.data[1];
