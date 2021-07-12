@@ -1,5 +1,4 @@
 onmessage = (e) => {
-    console.log("start")
     const query = e.data[0]
     const start = e.data[1]
     const stop = e.data[2]
@@ -13,10 +12,6 @@ onmessage = (e) => {
             arr.push("none")
         }
     }
-
-    a = 0
-    for (let i = 0; i < 3000000000; i++) { a++ }
-    console.log("done")
 
     postMessage(arr);
 };

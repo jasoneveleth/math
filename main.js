@@ -25,11 +25,11 @@ function create_results(element) {
     return element.childNodes
 }
 
-function $(str) { 
+function getel(str) { 
     return document.getElementById(str)
 }
 
 // ===============+ MAIN +=====================
-nodes = create_results($("results"))
-$("search").addEventListener('input', scan)
+nodes = create_results(getel("results"))
+getel("search").addEventListener('input', scan)
 let worker = new Worker("worker.js");
