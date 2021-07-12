@@ -6,7 +6,7 @@ onmessage = (e) => {
 
     arr = []
     for (let i = start; i < stop; i++) {
-        if (try_match(query, articles[i])) {
+        if (try_match(query, articles[i].text)) {
             arr.push("block")
         } else {
             arr.push("none")
