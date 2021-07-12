@@ -16,6 +16,7 @@ onmessage = (e) => {
 };
 
 function try_match(needle, haystack) {
+    console.log(haystack)
     const hwords = haystack.split(" ")
     const nwords = needle.split(" ")
     for (let i = 0; i < nwords.length; i++) {
