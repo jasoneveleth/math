@@ -25,7 +25,7 @@ function try_match(needle, haystack) {
     }
 
     a = 0
-    for (let i = 0; i < 100000000; i++) { a++ }
+    for (let i = 0; i < 1000000000; i++) { a++ }
 
     return true
 }
