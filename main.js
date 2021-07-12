@@ -1,23 +1,13 @@
 function scan(e) {
+    const worker = new Worker("worker.js");
     query = e.target.value
-    for (let i = 0; i < articles.length; i++) {
-        if (try_match(query, articles[i].text)) {
-            nodes[i].style.display = 'block'
-        } else {
-            nodes[i].style.display = 'none'
+    worker.onmessage = e => {
+        hidden_arr = e.data
+        for (let i = 0; i < e.data.length; i++) {
+            nodes[i].style.display = hidden_arr[i]
         }
     }
-}
-
-function try_match(needle, haystack) {
-    const hwords = haystack.split(" ")
-    const nwords = needle.split(" ")
-    for (let i = 0; i < nwords.length; i++) {
-        if (!hwords.includes(nwords[i])) { 
-            return false 
-        }
-    }
-    return true
+    worker.postMessage([query, 0, articles.length])
 }
 
 function create_results(element) {
