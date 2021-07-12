@@ -20,7 +20,7 @@ X = \begin{bmatrix}x_1 & 1\\x_2 & 1\\x_3 & 1\\x_4 & 1\\\dots & \dots\end{bmatrix
 So our goal is:
 $$\min_\alpha L(\alpha)$$
 $$=\min_\alpha \sum ((y_i) - (m x_i + b))^2$$
-Recall from [vectors](articles/vectors.html) that $\sum_i x_i^2 =
+Recall from [vectors](vectors.md.html) that $\sum_i x_i^2 =
 \lVert x \rVert^2$
 $$=\min_\alpha \left\lVert \begin{bmatrix}(y_1 - (m x_1 + b))\\(y_2 - (m x_2 + b))\\(y_3 - (m x_3 + b))\\(y_4 - (m x_4 + b))\\\dots\end{bmatrix}\right\rVert^2$$
 $$=\min_\alpha \lVert y - X\alpha\rVert^2$$
@@ -31,12 +31,12 @@ $$=\min_\alpha (y^T - \alpha^TX^T)(y - X\alpha)$$
 $$=\min_\alpha y^Ty - \alpha^TX^Ty - y^TX\alpha + \alpha^TX^TX\alpha$$
 
 To minimize this, we find the critical points of the function. We do this by finding where
-the [gradient](articles/gradient.html) of $L(\alpha)$ is $0$.
+the [gradient](gradient.md.html) of $L(\alpha)$ is $0$.
 
 $$0 = \frac{d}{d\alpha} L(\alpha)$$
 $$= \frac{d}{d\alpha} (y^Ty - \alpha^TX^Ty - y^TX\alpha + \alpha^TX^TX\alpha)$$
 $$=\frac{d}{d\alpha} (y^Ty) - \frac{d}{d\alpha} (\alpha^TX^Ty) - \frac{d}{d\alpha} (y^TX\alpha) + \frac{d}{d\alpha} (\alpha^TX^TX\alpha)$$
-Recall from [vector derivatives](articles/vector_derivatives.html): $\frac{d}{dx} ( u^Tx)
+Recall from [vector derivatives](vector_derivatives.md.html): $\frac{d}{dx} ( u^Tx)
 = u^T$, $\frac{d}{dx} (x^Tu) = u^T$, and $\frac{d}{dx}(x^Tx) =
 \frac{d}{dx}(\bar{x}^Tx) + \frac{d}{dx}(x^T\bar{x})$.[^1]
 $$= 0 - (X^Ty)^T - y^TX + \frac{d}{d\alpha} (\alpha^TX^TX\bar{\alpha}) + \frac{d}{d\alpha} (\bar{\alpha}^TX^TX\alpha)$$
@@ -51,6 +51,45 @@ glorious),
 $$2y^TX=2\alpha^TX^TX$$
 $$y^TX=\alpha^T(X^TX)$$
 $$y^TX(X^TX)^{-1} = \alpha^T = \begin{bmatrix}m & b\end{bmatrix}$$
+
+# Examples
+
+Say we are given this set of coordinates: 
+$\{(1.3, 0.8), (3.2, 3.5), (5.6, 6.4), (8.5, 7.7)\}$. Then we need to open 
+`julia` and give give it the vectors:
+```julia
+julia> y = [0.8; 3.5; 6.4; 7.7]
+4-element Vector{Float64}:
+ 0.8
+ 3.5
+ 6.4
+ 7.7
+
+julia> X = [1.3 1; 3.2 1; 5.6 1; 8.5 1]
+4×2 Matrix{Float64}:
+ 1.3  1.0
+ 3.2  1.0
+ 5.6  1.0
+ 8.5  1.0
+
+julia> yt = transpose(y)
+1×4 transpose(::Vector{Float64}) with eltype Float64:
+ 0.8  3.5  6.4  7.7
+
+julia> Xt = transpose(X)
+2×4 transpose(::Matrix{Float64}) with eltype Float64:
+ 1.3  3.2  5.6  8.5
+ 1.0  1.0  1.0  1.0
+
+julia> yt * X * inv(Xt * X)
+1×2 transpose(::Vector{Float64}) with eltype Float64:
+ 0.962823  0.122874
+
+```
+
+Which gives us our desired line of best fit: $y = 0.962823x + 0.122874$.
+
+
 
 [^1]: The bar in $\bar{\alpha}$ or $\bar{x}$ means treat it as a constant, in
   the same way that you would if you were doing the product rule with single
