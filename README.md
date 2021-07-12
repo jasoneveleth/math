@@ -9,5 +9,5 @@ help you find theorems or how to solve problems.
   into the `dict.js` file
 - [x] write the code for the search engine
 - [ ] write in all the theorems
-- [ ] test that the search engine is actually quitting if another query begins
+- [x] test that the search engine is actually quitting if another query begins
 
