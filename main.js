@@ -1,5 +1,5 @@
 function scan(e) {
-    query = e.target.value
+    query = e.target.value.toLowerCase()
 
     worker.terminate()
     worker = new Worker("worker.js");
