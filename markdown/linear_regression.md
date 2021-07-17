@@ -55,7 +55,8 @@ $$y^TX(X^TX)^{-1} = \alpha^T = \begin{bmatrix}m & b\end{bmatrix}$$
 # Examples
 
 Say we are given this set of coordinates: 
-$\{(1.3, 0.8), (3.2, 3.5), (5.6, 6.4), (8.5, 7.7)\}$. Then we need to open 
+$\{(1.3, 0.8), (3.2, 3.5), (5.6, 6.4), (8.5, 7.7)\}$. Then we can either do the
+arithmetic by hand (from the last equation) or open 
 `julia` and give give it the vectors (some output omitted):
 ```julia
 julia> y = [0.8; 3.5; 6.4; 7.7]
