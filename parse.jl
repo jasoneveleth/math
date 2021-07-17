@@ -11,7 +11,7 @@ for filename in readdir("markdown")
             continue
         end
         if (i[1] == 2)
-            title = split(i[2], " ")[2]
+            title = split(i[2], " ", limit=2)[2]
             write(articles, "title: \"$title\",\ntext: \"")
             write(articles, lowercase(title))
         elseif (length(i[2]) > 1 && i[2][1:2] == "\$\$")
