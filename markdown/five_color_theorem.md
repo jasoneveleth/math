@@ -22,14 +22,16 @@ degree $\geq 6$. Then let us consider the size of this set:
 $$VE = \{(v,e) : v \in V, e \in E, v \text{ is adjacent to } e\}$$
 
 Every edge will be in there twice, so $$|VE| = 2|E|.$$ Also, we know that all
-vertices have at least 6 edges, so $$|VE| \geq 6|V|.$$ Thus, $$2|E| \geq 6|V|.$$
+vertices have at least 6 edges, so $$|VE| \geq 6|V|.$$ Thus, $$2|E| \geq 6|V|
+\implies \frac{1}{3}|E| \geq |V|.$$
 
 Next, consider the set:
 
 $$FE = \{(f,e) : e \in E, f \in F, f \text{ is adjacent to } e\}$$
 
 Every edge can see 2 faces, so $|FE| = 2|E|$, and every face has at least 3
-edges, so $|FE| \geq 3|F|$. Putting this together, $2|E| \geq 3|F|$.
+edges, so $|FE| \geq 3|F|$. Putting this together, $2|E| \geq 3|F| \implies
+\frac{2}{3}|E| \geq |F|$.
 
 Now, we apply Euler's formula to get:
 
