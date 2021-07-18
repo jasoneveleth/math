@@ -29,9 +29,9 @@ Next, consider the set:
 
 $$FE = \{(f,e) : e \in E, f \in F, f \text{ is adjacent to } e\}$$
 
-Every edge can see 2 faces, so $|FE| = 2|E|$, and every face has at least 3
-edges, so $|FE| \geq 3|F|$. Putting this together, $2|E| \geq 3|F| \implies
-\frac{2}{3}|E| \geq |F|$.
+Every edge can see 2 faces, so $$|FE| = 2|E|$$, and every face has at least 3
+edges, so $$|FE| \geq 3|F|.$$ Putting this together, $$2|E| \geq 3|F| \implies
+\frac{2}{3}|E| \geq |F|.$$
 
 Now, we apply Euler's formula to get:
 
@@ -48,9 +48,9 @@ $$\tag*{$\Box$}$$
 Now for the real proof. This proof is by induction on the number of vertices in
 a planar graph:
 
-Base case: $V=1$, it is clear that this is 5-colorable with just 1 color.
+Base case: $|V|=1$, it is clear that this is 5-colorable with just 1 color.
 
-Inductive step: We assume that all planar graphs with $V-1$ vertices are 5
+Inductive step: We assume that all planar graphs with $|V|-1$ vertices are 5
 colorable. We know from the lemma that there exists at least one vertex $w$ of
 degree 5 or less. We know that if it has less degree less than 5 that we instantly win because if
 we remove that vertex, it is 5 colorable (from our inductive hypothesis). And
