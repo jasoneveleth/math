@@ -23,7 +23,7 @@
       padding-top: 50px;
       padding-bottom: 50px;
       hyphens: auto;
-      word-wrap: break-word;
+      overflow-wrap: break-word;
       text-rendering: optimizeLegibility;
       font-kerning: normal;
     }
@@ -94,6 +94,7 @@
     pre code {
       padding: 0;
       overflow: visible;
+      overflow-wrap: normal;
     }
     .sourceCode {
      background-color: transparent;
@@ -160,6 +161,7 @@
 <p>For every <a href="planar_graph.md.html">planar graph</a>, there exists a coloring of its vertices using at most 5 colors such that no two adjacent vertices have the same color.</p>
 <h1 id="proof">Proof</h1>
 <h2 id="lemma-degree-5-vertex">Lemma: degree 5 vertex</h2>
+<p><img src="../images/five_color_theorem1.svg" /></p>
 <p>To show that every planar graph has at least 1 vertex of degree <span class="math inline">\(\leq 5\)</span>, we assume <a href="euler_formula.md.html">euler’s formula</a>, that given <span class="math inline">\(F\)</span> faces, <span class="math inline">\(V\)</span> vertices, and <span class="math inline">\(E\)</span> edges of a planar graph, that <span class="math display">\[F + V = E + 2.\]</span></p>
 <p>We assume for contradiction, there exists a planar graph <span class="math inline">\(G = (F, V, E)\)</span> with all vertices of degree <span class="math inline">\(\geq 6\)</span>. Then let us consider the size of this set:</p>
 <p><span class="math display">\[VE = \{(v,e) : v \in V, e \in E, v \text{ is adjacent to } e\}\]</span></p>
@@ -176,6 +178,7 @@
 <h2 id="real-proof">Real proof</h2>
 <p>Now for the real proof. This proof is by induction on the number of vertices in a planar graph:</p>
 <p>Base case: <span class="math inline">\(|V|=1\)</span>, it is clear that this is 5-colorable with just 1 color.</p>
+<p><img src="../images/five_color_theorem2.svg" /></p>
 <p>Inductive step: We assume that all planar graphs with <span class="math inline">\(|V|-1\)</span> vertices are 5 colorable. We know from the lemma that there exists at least one vertex <span class="math inline">\(w\)</span> of degree 5 or less. We know that if it has less degree less than 5 that we instantly win because if we remove that vertex, it is 5 colorable (from our inductive hypothesis). And because <span class="math inline">\(w\)</span> has degree less than 5 it can be colored by a color that isn’t in its neighbors. Thus, we can assume <span class="math inline">\(w\)</span> has 5 neighbors.</p>
 <p>Now, becuase <span class="math inline">\(w\)</span> has 5 neighbors, if any two of them have the same color, then we can color <span class="math inline">\(w\)</span> the color that is missing, so we can assume that <span class="math inline">\(w\)</span> has degree at least 5.</p>
 <p>To recap what we know so far: all planar graphs have at least one vertex with less than degree 5. The worst case scenario for our proof is when it is exactly 5, and all of the neighbors have different colors. All other cases we win.</p>

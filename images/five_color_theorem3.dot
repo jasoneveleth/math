@@ -1,0 +1,33 @@
+graph g {
+node [
+shape = "ellipse"
+];
+"w" [ label = "w" ];
+"1" [ label = "1" ];
+"2" [ label = "2" ];
+"3" [ label = "3" ];
+"4" [ label = "4" ];
+"5" [ label = "5" ];
+"6" [ label = "..." shape = "none" ];
+"7" [ label = "..." shape = "none" ];
+"8" [ label = "..." shape = "none" ];
+"9" [ label = "..." shape = "none" ];
+"10" [ label = "..." shape = "none" ];
+"11" [ label = "..." shape = "none" ];
+"12" [ label = "..." shape = "none" ];
+"13" [ label = "..." shape = "none" ];
+"14" [ label = "..." shape = "none" ];
+"15" [ label = "..." shape = "none" ];
+"16" [ label = "..." shape = "none" ];
+"17" [ label = "..." shape = "none" ];
+"w" -- "1";
+"w" -- "2";
+"w" -- "3";
+"w" -- "4";
+"w" -- "5";
+"1" -- "6";
+"2" -- "7";
+"3" -- "8";
+"4" -- "9";
+"5" -- "10";
+}

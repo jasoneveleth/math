@@ -13,6 +13,8 @@ at most 5 colors such that no two adjacent vertices have the same color.
 
 ## Lemma: degree 5 vertex
 
+![](../images/five_color_theorem1.svg)
+
 To show that every planar graph has at least 1 vertex of degree $\leq 5$, we assume [euler's formula](euler_formula.md.html), that given $F$ faces, $V$
 vertices, and $E$ edges of a planar graph, that $$F + V = E + 2.$$
 
@@ -49,6 +51,8 @@ Now for the real proof. This proof is by induction on the number of vertices in
 a planar graph:
 
 Base case: $|V|=1$, it is clear that this is 5-colorable with just 1 color.
+
+![](../images/five_color_theorem2.svg)
 
 Inductive step: We assume that all planar graphs with $|V|-1$ vertices are 5
 colorable. We know from the lemma that there exists at least one vertex $w$ of

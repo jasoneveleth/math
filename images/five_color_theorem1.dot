@@ -1,0 +1,16 @@
+graph g {
+node [
+shape = "ellipse"
+];
+"w" [ label = "w" ];
+"6" [ label = "..." shape = "none" ];
+"7" [ label = "..." shape = "none" ];
+"8" [ label = "..." shape = "none" ];
+"9" [ label = "..." shape = "none" ];
+"10" [ label = "..." shape = "none" ];
+"w" -- "6";
+"w" -- "7";
+"w" -- "8";
+"w" -- "9";
+"w" -- "10";
+}
